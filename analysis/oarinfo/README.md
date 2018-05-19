@@ -10,3 +10,15 @@ referred to by objects) are present, though this is quite a lot of work so might
 Patches welcome.
 
 vim: ts=4:sw=4:et:tw=120
+
+
+Dies ist ein Dienstprogramm, um Informationen zu einem OAR anzuzeigen.
+
+Im Moment wird nur die Anzahl der enthaltenen Assets und die Anzahl der enthaltenen Objekte ausgegeben.
+
+In der Zukunft könnte es ausgefeiltere Sachen wie die Gesundheitsprüfung eines OAR machen, um alle Referenzen (z.B.
+auf Objekte bezogen) sind vorhanden, obwohl das ziemlich viel Arbeit ist, also könnte es nicht bald passieren.
+
+Patches willkommen.
+
+vim: ts = 4: sw = 4: et: tw = 120

@@ -25,3 +25,33 @@ files to use in graph generation.
 [OPENSIM-STATS-LOGS] - http://opensimulator.org/wiki/Show_stats#stats_record
 
 vim: ts=4:sw=4:et:tw=120
+
+
+
+# README #
+
+Der OpenSimulator-Statistikanalysator ist eine Sammlung von Tools zur Analyse von Daten aus OpenSimulator-Statistikprotokollen [OPENSIM-STATS-LOGS].
+
+ostagraph.py kann Optionen von der Befehlszeile aus einer einzelnen Generation oder aus einer Stapeldatei für
+gleichzeitige Erzeugung einer Menge von Graphen
+
+All dies benötigt viel mehr Dokumentation, aber Sie können eine Beispiel-Batch-Generierungsdatei als batch / stdgraphs.json sehen
+erstellt eine Reihe von Standardgraphen für eine Simulator-Eingabedateigruppe.
+
+Dies kann durch einen Shell-Befehl wie z
+
+$ ./ostagraphs.py --batch batch / stdgraphs.json --outdir graphs data / oscc / 2014-09-02 / logs / *. log
+
+Dabei ist outdir das Verzeichnis, in dem die generierten Graphen abgelegt werden, und das letzte Argument ist der Ort, an dem das Statistikprotokoll zu finden ist
+Dateien, die in der Diagrammgenerierung verwendet werden sollen.
+
+# Bedarf #
+
+* Python> = 2.7
+* matplotlib> = 1.3.1 (sehr wahrscheinlich werden auch frühe Versionen funktionieren).
+
+# Verweise #
+
+[OPENSIM-STATS-LOGS] - http://opensimulator.org/wiki/Show_stats#stats_record
+
+vim: ts = 4: sw = 4: et: tw = 120

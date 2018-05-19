@@ -31,3 +31,39 @@ $ ./compile-linux.sh
 # REFERENCES #
 
 [1] http://msdn.microsoft.com/en-us/library/system.threading.threadpool%28v=vs.100%29.aspx
+
+
+
+# README #
+
+Ein sehr einfaches Programm zum Ausdrucken des aktuellen maximalen und minimalen Worker und
+IOCP-Thread-Einstellungen für den integrierten Threadpool unter Mono und Windows [1].
+
+Da OpenSimulator Threads ausgiebig verwendet, ist die Anzahl der maximalen Threads gering
+kann zu Leistungsproblemen führen.
+
+Beim Start versucht OpenSimulator, diese Nummern selbst zu erhöhen.
+
+Siehe http://opensimulator.org/wiki/Configuration#Note_About_Mono für mehr
+Information.
+
+Die Min-Thread-Zahlen sind die Anzahl der Threads, die Windows oder Mono verwenden
+immer auf Anfrage zuordnen.
+
+Wenn das Programm mehr Threads aus dem Pool anfordert, handelt es sich um die virtuelle Maschine
+Das entscheidet, ob diese Threads zugeordnet werden oder auf andere Aufgaben warten sollen
+abgeschlossen.
+
+Die maximalen Thread-Zahlen sind die maximale Anzahl der Threads, die der Pool verwenden kann
+jemals erschaffen.
+
+Wenn das Programm einen zusätzlichen Thread aus dem Pool anfordert, muss die Anforderung dies tun
+Warten Sie, bis ein vorhandener Thread für eine neue Aufgabe verfügbar ist.
+
+# COMPILATION #
+
+$ ./compile-linux.sh
+
+# VERWEISE #
+
+[1] http://msdn.microsoft.com/en-us/library/system.threading.threadpool%28v=vs.100%29.aspx

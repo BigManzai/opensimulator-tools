@@ -12,3 +12,20 @@ At the moment, only prints out
 Should be run against OpenSim.log (standalone) or Robust.log (grid).
 
 Example: ola.py *.log
+
+
+
+# README #
+
+Ein sehr primitives Tool für die Analyse von OpenSimulator-Protokollen.
+
+Es wird wahrscheinlich nur für den neuesten OpenSimulator-Code (und dann manchmal nur für den Entwickler-Code) als korrekt gelten
+Es beruht auf der Auswahl veränderbarer Protokollzeilen.
+
+Im Moment wird nur gedruckt
+   * Einzigartiges Hypergrid, direkte und vollständige Logins
+   * Prozessspeicher-Statistiken, falls verfügbar.
+
+Sollte gegen OpenSim.log (Standalone) oder Robust.log (Grid) laufen.
+
+Beispiel: ola.py * .log
