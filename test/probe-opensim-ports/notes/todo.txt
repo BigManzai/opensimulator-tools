@@ -4,3 +4,9 @@ read http address out of ini files
   create common ini file parsing code
   pythons ConfigParser throws up if a line doesn't stricly begin with ;
 http probe port 9000
+
+
+Lies die HTTP-Adresse aus den Ini-Dateien
+   Erstellen Sie einen gemeinsamen Ini-Datei-Parsing-Code
+   Pythons ConfigParser wirft hoch, wenn eine Zeile nicht genau mit beginnt;
+HTTP-Sondenanschluss 9000

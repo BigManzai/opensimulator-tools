@@ -31,3 +31,41 @@ TextureLoadTest.exe <GetTexture-capability-URL> <texture-ids-file>
 For instance,
 
 ./TextureLoadTest.exe http://localhost:8002/CAPS/301b5e2e-cf41-4b80-ad32-0123ca399ef3/ textures.txt
+
+
+
+
+
+README
+
+== VERWENDUNG ==
+
+Dies ist ein Programm, um den Abruf von Texturen von einer OpenSimulator Simulator Instanz zu testen.
+
+Um eine Liste von Textur-IDs zum Testen zu extrahieren, können Sie den Befehl verwenden.
+
+mysql -NB -u<user> -p<password> <db-name> -e "select id from assets where AssetType=0;" > textures.txt
+
+gegen die RROBUST service database (unter Annahme einer Rasterkonfiguration).
+
+Um den Test durchzuführen, benötigen Sie außerdem eine gültige Fähigkeits-URL. Sie können einen erhalten, indem Sie einen Viewer anmelden
+und dann "show caps" auf der region console ausführen. Eine der Linien wird etwas wie sein
+
+GetTexture                             /CAPS/301b5e2e-cf41-4b80-ad32-0123ca399ef3/
+
+aber mit einer anderen UUID. Diese sind nur für angemeldete Viewer verfügbar, da sie eindeutig sind
+für einen bestimmten Benutzer generiert und dann entsorgt, wenn sie sich abmelden oder vom Simulator weggehen.
+
+Der CAPS-Teil wird mit der Standard-HTTP-URL kombiniert, um die vollständige GetTexture zu erhalten
+Fähigkeits-URL. Unter der Annahme, dass der Simulator bei 127.0.0.1 mit einem HTTP-Port von 9000 ist (was der Standard ist),
+Das wird sein
+
+http://localhost:9000/CAPS/301b5e2e-cf41-4b80-ad32-0123ca399ef3/
+
+Dies wird mit der TextureLoadTest.exe verwendet, die die Syntax für die Verwendung hat
+
+TextureLoadTest.exe <GetTexture-capability-URL> <texture-ids-file>
+
+Zum Beispiel,
+
+./TextureLoadTest.exe http://localhost:8002/CAPS/301b5e2e-cf41-4b80-ad32-0123ca399ef3/ textures.txt

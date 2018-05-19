@@ -51,3 +51,63 @@ avatars).
 ## References ##
 [1] https://github.com/openmetaversefoundation/libopenmetaverse
 [2] https://github.com/justincc/libomv4php
+
+
+
+
+
+
+
+# README #
+
+## Einführung ##
+Dieses Verzeichnis enthält verschiedene Programme in PHP zum Ausführen
+Integrationstasks mit OpenSimulator im Grid-Modus. Diese derzeit
+arbeiten für den Standalone-Modus, da sie auf die Verfügbarkeit des ROBUST angewiesen sind
+Serviceschnittstellen über HTTP.
+
+Weitere Informationen finden Sie in den einzelnen src / programs / * / README.txt. Jeder
+Programm ist in seinem eigenen Verzeichnis enthalten, abgesehen von Verweisen auf
+allgemeine Dienstprogramm- und Konfigurationsdateien in übergeordneten Verzeichnissen (z. B. utils.php).
+
+## Voraussetzungen ##
+1. PHP> = 5.1.0
+2. PHP Curl-Modul
+3. PEAR-Paket Console_CommandLine (http://pear.php.net/package/Console_CommandLine)
+
+## Benutzen ##
+1. Bearbeiten Sie die config.php so, dass die Service-URIs auf Ihren ROBUST-Service-Host zeigen
+oder Hosts.
+
+2. Ausführen / Untersuchen einzelner PHP-Skripte in Programmen /
+
+## Verzeichnisaufbau ##
+
+* config.php - Konfigurationsdatei
+* utils.php -
+
+### Dachboden/ ###
+Code, den ich behalten möchte, aber derzeit nicht verwendet wird.
+
+### Konnektoren / ###
+Connectors, die OpenSimulator-Serviceanforderungen erstellen und analysieren. Bietet
+Methoden, die Anrufer verwenden können, um Serviceanforderungen aufzurufen, ohne dass sie es wissen müssen
+die Serviceanrufformate (z. B. GetFolderContent () von)
+Inventar-Service-Connector.php). Zu diesem Zeitpunkt müssen Skripts jedoch noch ausgeführt werden
+parsen direkt XML-Antworten. In Zukunft können Klassen statt zurückgegeben werden
+Roh-XML, um das aufrufende Skript von Details auf niedriger Ebene weiter zu isolieren.
+
+OpenSimulator-Dienste werden mit PHP Curl aufgerufen.
+
+### openmetaverse types / ###
+Ein Splitter der C # OpenMetaverse Bibliothek [1] um
+Unterstützen Sie die PHP-Skripte, hauptsächlich Enumerationen zu diesem Zeitpunkt. Haupt-Repository für
+das ist bei [2].
+
+### programme / ###
+Beispielskripts zum Ausführen verschiedener Aufgaben (z. B. Hinzufügen von Anlagen zu
+Avatare).
+
+## Verweise ##
+[1] https://github.com/openmetaversefoundation/libopenmetaverse
+[2] https://github.com/justincc/libomv4php
