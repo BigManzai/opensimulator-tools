@@ -87,3 +87,97 @@ fail if there is something already there.
 
 # References #
 [1] http://argparse.googlecode.com/hg/argparse.py
+
+
+
+
+
+# README #
+
+Ein paar Skripte zum Starten von Komponenten von OpenSimulator. Das ist ein
+Alternative zum Script /etc/init.d, das an anderer Stelle in diesem Repository gefunden wurde.
+
+Diese Skripte arbeiten mit screen instanzen.
+
+Es wäre möglich, diese Skripte viel ausgefeilter zu machen (z.B.
+automatische Erkennung, ob die Grid-Dienste vor dem Start von a ausgeführt werden
+Simulator usw.).
+
+Derzeit werden sie jedoch bewusst einfach gehalten, um die
+Benutzer in der Nähe von dem, was wirklich passiert. Dies erleichtert Debugging und das
+Fähigkeit, mit den vielen möglichen Fehlerbedingungen umzugehen. Dies könnte sich ändern
+die Zukunft.
+
+# Installation #
+
+1. Kopieren Sie src / * an einen Ort Ihrer Wahl
+2. Wenn Sie Python früher als 2.7m verwenden, müssen Sie argparse.py kopieren
+[1] in den gleichen Ort.
+
+# Aufbau #
+
+1. Vor der Verwendung müssen Sie config.py.example in config.py und kopieren
+Konfigurieren Sie es für Ihre OpenSimulator-Installation.
+
+2. Es gibt auch einige optionale Konfigurationsparameter in simctrl.py und
+robustctr.py, obwohl Sie diese normalerweise nicht bearbeiten müssen. Diese Kontrolle
+der Name des verwendeten Bildschirms, ob Mono mit dem Schalter --debug gestartet wird,
+etc.
+
+# Benutzen #
+
+simctrl.py steuert eine Simulatorinstanz, während robustctr.py eine
+Robuste Grid-Service-Instanz.
+
+Wenn sich die OpenSimulator-Installation im eigenständigen Modus befindet, kann dies der Fall sein
+rein mit dem Skript simctrl.py gesteuert.
+
+Beide Skripts enthalten eine Reihe von Befehlen zum Steuern ihrer Komponenten.
+Diese sind
+
+start - startet eine Instanz der Komponente.
+stop - Stoppen Sie die Komponente, wenn sie ausgeführt wird.
+Neustart - Starten Sie die Komponente neu, wenn sie ausgeführt wird.
+attach - Anfügen an die aktuelle Bildschirminstanz der Komponente, wenn sie ausgeführt wird.
+status - Ermittelt den aktuellen Status der Komponente.
+
+Es gibt auch ein paar optionale Schalter
+
+-a, --anhängen
+
+Nur gültig für Start- und Neustartbefehle. Wenn gesetzt, osimctrl automatisch
+verbindet Sie mit dem Bildschirm der [re] gestarteten Komponente.
+
+-r, --autorestart
+
+Wenn eine Komponente ausfällt, starten Sie sie automatisch neu. Wenn Sie diese Option verwenden
+Dann können Sie die Komponente nur mit dem Befehl stop statt manuell stoppen
+Anbringen an den Bildschirm und Herunterfahren (da die umgebende Schleife wird
+starte es einfach nochmal). Alternativ können Sie das Signal SIGUSR1 an die
+Bash-Skript, das als einfache Schleife fungiert. Dies wird ein Child-Prozess von sein
+die Bildschirminstanz).
+
+-v, --verbose
+
+Wenn gesetzt, gibt osimctrl jeden ausgeführten Befehl und andere Informationen aus.
+Nützlich zum Debuggen
+
+-h. --Hilfe
+
+Verwendungstext anzeigen
+
+Es bietet Start, Stop, Neustart, Anfügen und Statusbefehle, zusammen mit
+Optionen --noattach und --autorestart
+
+# Dateien #
+
+## robustctrl.py, simctrl.py ##
+Diese Dateien steuern eine robuste Instanz bzw. einen Simulator.
+
+# Fehler #
+
+Da stop momentan einen Text in den Bildschirmpuffer einbezieht, wird dies der Fall sein
+scheitern, wenn da schon etwas ist.
+
+# Verweise #
+[1] http://argparse.googlecode.com/hg/argparse.py
